@@ -1,0 +1,31 @@
+{
+  "name": "mythloop",
+  "version": "1.0.0",
+  "description": "Personal Universe Engine - Local, Private, Infinite",
+  "author": "MythLoop Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mythloop/mythloop.git"
+  },
+  "keywords": [
+    "ai",
+    "local-llm",
+    "universe-creator",
+    "no-code",
+    "rpg",
+    "creative-tools",
+    "tauri",
+    "ollama"
+  ],
+  "scripts": {
+    "dev": "cd src/renderer && npm run dev",
+    "build": "cd src/renderer && npm run build",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "i18next": "^23.0.0",
+    "react-i18next": "^14.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}
