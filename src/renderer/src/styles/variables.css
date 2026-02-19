@@ -1,0 +1,54 @@
+:root {
+  /* Colors - Emotion-based */
+  --emotion-anger: #ff6b6b;
+  --emotion-fear: #9b59b6;
+  --emotion-joy: #f1c40f;
+  --emotion-sadness: #3498db;
+  
+  /* Magic Types */
+  --magic-fire: #e74c3c;
+  --magic-ice: #3498db;
+  --magic-lightning: #f39c12;
+  --magic-healing: #2ecc71;
+  --magic-illusion: #9b59b6;
+  
+  /* UI Colors */
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #252542;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0c0;
+  --text-muted: #6b6b8d;
+  --border-color: #3a3a5c;
+  --accent-color: #7c3aed;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --error-color: #e74c3c;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  
+  /* Border Radius */
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.3);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
