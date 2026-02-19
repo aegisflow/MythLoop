@@ -1,0 +1,50 @@
+name: "Emotion Magic"
+version: "1.0.0"
+description: "Your emotions create real magic. Anger = Fire, Fear = Illusions, Joy = Healing."
+genre: "fantasy"
+
+rules:
+  - id: "anger_fire"
+    trigger: "user feels anger"
+    effect: "spawn fire entity"
+    parameters:
+      damage: 10
+      duration: 30
+    conditions:
+      - "mana > 20"
+
+  - id: "fear_illusion"
+    trigger: "user feels fear"
+    effect: "spawn illusion"
+    parameters:
+      duration: 60
+      complexity: "medium"
+    conditions: []
+
+  - id: "joy_healing"
+    trigger: "user feels joy"
+    effect: "heal wounds"
+    parameters:
+      healing: 15
+    conditions:
+      - "health < 100"
+
+visuals:
+  enabled: true
+  style: "fantasy"
+  quality: "high"
+
+audio:
+  voiceNarration: true
+  ambientSounds: true
+  music: true
+
+metadata:
+  author: "MythLoop Team"
+  license: "MIT"
+  tags:
+    - "fantasy"
+    - "magic"
+    - "emotions"
+    - "beginner-friendly"
+  createdAt: "2026-02-18T00:00:00Z"
