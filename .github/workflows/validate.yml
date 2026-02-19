@@ -1,0 +1,34 @@
+name: Validate Templates
+
+on:
+  pull_request:
+    paths: ['templates/**/*.yaml']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml jsonschema
+      - run: |
+          python -c "
+          import yaml, json, jsonschema
+          from pathlib import Path
+          schema = json.load(open('src/shared/schema.json'))
+          for file in Path('templates').glob('*.yaml'):
+              template = yaml.safe_load(open(file))
+              jsonschema.validate(template, schema)
+              print(f'✅ {file.name} is valid')
+          "
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ Template validation passed! Ready for review.'
+            })
