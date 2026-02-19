@@ -8,13 +8,17 @@ INSTALL_DIR="${HOME}/.mythloop"
 mkdir -p "$INSTALL_DIR"
 
 echo "⬇️  Downloading latest release..."
-LATEST=$(curl -s https://api.github.com/repos/mythloop/mythloop/releases/latest \
+
+# ✅ URL ATUALIZADA: aegisflow/MythLoop
+LATEST=$(curl -s https://api.github.com/repos/aegisflow/MythLoop/releases/latest \
   | grep "browser_download_url" \
+  | grep -E "\.(tar\.gz|deb|dmg|AppImage)" \
   | cut -d '"' -f 4 \
   | head -1)
 
 if [ -z "$LATEST" ]; then
   echo "❌ No release found"
+  echo "💡 Download manually from: https://github.com/aegisflow/MythLoop/releases"
   exit 1
 fi
 
@@ -26,4 +30,4 @@ echo "✅ Installation complete!"
 echo ""
 echo "Run 'mythloop' to start"
 echo "💬 Join Telegram: https://t.me/mythloop"
-echo "🌟 Star us: https://github.com/mythloop/mythloop"
+echo "🌟 Star us: https://github.com/aegisflow/MythLoop"
