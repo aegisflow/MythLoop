@@ -1,0 +1,99 @@
+{
+  "id": "file-reader",
+  "version": "1.0.0",
+  "name": "File Reader",
+  "description": "Read local files for contextual narratives",
+  "author": "@Rain012",
+  "license": "MIT",
+  "repository": "https://github.com/mythloop/mythloop",
+  "createdAt": "2026-02-18T00:00:00Z",
+  
+  "permissions": [
+    "read:files",
+    "write:logs"
+  ],
+  
+  "triggers": [
+    "user selects folder",
+    "user uploads file",
+    "universe requests file content"
+  ],
+  
+  "effects": [
+    "read content",
+    "extract text",
+    "return to universe",
+    "log access"
+  ],
+  
+  "limits": {
+    "maxFileSize": "10MB",
+    "maxFileSizeBytes": 10485760,
+    "allowedExtensions": [
+      ".txt",
+      ".md",
+      ".json",
+      ".yaml",
+      ".yml",
+      ".ts",
+      ".js",
+      ".py",
+      ".html",
+      ".css"
+    ],
+    "forbiddenPaths": [
+      "/System",
+      "/Windows",
+      "/.ssh",
+      "/.gnupg",
+      "/.aws",
+      "/.config",
+      "/.env",
+      "/etc/passwd",
+      "/etc/shadow"
+    ],
+    "requestsPerMinute": 60,
+    "networkAccess": false,
+    "writeAccess": false
+  },
+  
+  "execution": {
+    "type": "local",
+    "runtime": "node",
+    "runtimeVersion": ">=18.0.0",
+    "entry": "skills/file-reader/index.js",
+    "sandbox": true,
+    "logging": true
+  },
+  
+  "security": {
+    "explicitConsent": true,
+    "auditTrail": true,
+    "dataRetention": "session-only",
+    "externalSharing": false,
+    "encryption": "none-required-local"
+  },
+  
+  "ui": {
+    "icon": "📂",
+    "color": "#3498db",
+    "category": "File Access",
+    "difficulty": "beginner",
+    "showInGallery": true
+  },
+  
+  "metadata": {
+    "tags": [
+      "files",
+      "local",
+      "reader",
+      "core",
+      "safe"
+    ],
+    "relatedSkills": [
+      "file-writer",
+      "folder-scanner"
+    ],
+    "documentation": "../../docs/skills.md"
+  }
+}
